@@ -68,9 +68,9 @@ export default function Produtos({ history }) {
                 <div>
                     <h2>{produto.title}</h2>
                     <div className="divBtns">
-                        <button className="btnRemover" onClick={() => handleRemove(produto.id)}>-</button>
+                        <button className="btnRemover" disabled={produto.qtd === 0} onClick={() => handleRemove(produto.id)}>-</button>
                         <input type="text" value={produto.qtd} readOnly />
-                        <button className="btnAdicionar" onClick={() => handleAdd(produto)}>+</button>
+                        <button className="btnAdicionar" disabled={produto.qtd === produto.quantity} onClick={() => handleAdd(produto)}>+</button>
                     </div>
                 </div>
             </div>
