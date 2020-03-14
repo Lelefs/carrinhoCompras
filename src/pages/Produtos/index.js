@@ -8,13 +8,10 @@ import './styles.css';
 
 export default function Produtos({ history }) {
     let [qtdProduto, setQtdProduto] = useState('');
-    const produto_id = localStorage.getItem('produto_id');
-    let array = localStorage.getItem('arrayProdutos');
-    array = JSON.parse(array);
-    let produtoFinal = localStorage.getItem('produto');
-    produtoFinal = JSON.parse(produtoFinal);
+    let array = JSON.parse(localStorage.getItem('arrayProdutos'));
+    let produtoFinal = JSON.parse(localStorage.getItem('produto'));
     let qtdTotal = localStorage.getItem('qtdTotal');
-    
+
     const [produto, setProduto] = useState([qtdProduto]);
 
     useEffect(() => {

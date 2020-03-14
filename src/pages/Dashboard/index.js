@@ -19,7 +19,6 @@ export default function Dashboard({ history }) {
 
     function handleSubmit(produto) {
         history.push(`/produto/${produto.id}`);
-        localStorage.setItem('produto_id', produto.id);
         produto.valor = `R$ ${produto.price.toLocaleString('pt-BR')}`;
         produto.qtd = produto.qtd ? produto.qtd : 0
         localStorage.setItem('produto', JSON.stringify(produto));
